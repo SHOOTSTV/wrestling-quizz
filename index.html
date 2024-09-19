@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Catch</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/15de9577f9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="btn-container">
+      <button class="btn start_btn">Commencer le Quiz</button>
+      <a href="/leaderboard.html" class="btn leaderboard">
+        Classement <i class="fas fa-crown"></i>
+      </a>
+    </div>
+
+    <div class="info_box">
+      <div class="info-title">
+        <span>Quelques règles :</span>
+      </div>
+      <div class="info-list">
+        <div class="info">
+          1. Vous n'aurez que <span>15 secondes</span> par question.
+        </div>
+        <div class="info">
+          2. Une fois que vous avez sélectionné votre réponse, elle ne peut pas
+          être annulée.
+        </div>
+        <div class="info">
+          3. Vous ne pouvez sélectionner aucune option une fois le temps écoulé.
+        </div>
+        <div class="info">
+          4. Vous ne pouvez pas quitter le quiz pendant que vous jouez.
+        </div>
+        <div class="info">
+          5. Vous obtiendrez des points en fonction de vos réponses correctes.
+        </div>
+      </div>
+      <div class="buttons">
+        <button class="quit">Quitter</button>
+        <button class="restart">Continuer</button>
+      </div>
+    </div>
+
+    <div class="quiz_box">
+      <header>
+        <div class="title">Quiz sur le catch</div>
+        <div class="timer">
+          <div class="time_left_txt">Temps :</div>
+          <div class="timer_sec">15</div>
+        </div>
+        <div class="time_line"></div>
+      </header>
+      <section>
+        <div class="que_text">
+          <!-- Inserted questions from JavaScript -->
+        </div>
+        <div class="option_list">
+          <!-- Inserted options from JavaScript -->
+        </div>
+      </section>
+      <footer>
+        <div class="total_que">
+          <!-- Inserted question count number from JavaScript -->
+        </div>
+        <button class="next_btn">Suivant</button>
+      </footer>
+    </div>
+
+    <div class="result_box">
+      <div class="icon">
+        <i class="fas fa-crown"></i>
+      </div>
+      <div class="complete_text">Vous avez terminé le quiz!</div>
+      <div class="score_text">
+        <!-- Inserted score result from JavaScript -->
+      </div>
+      <div class="username_input">
+        <label for="username" class="score_text">Entrez votre pseudo :</label>
+        <input type="text" id="username" name="username" required />
+        <button id="save_score">Sauvegarder & Quitter</button>
+      </div>
+      <div class="buttons">
+        <button class="restart">Recommencer</button>
+        <button class="quit">Quitter</button>
+      </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

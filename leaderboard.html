@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classement</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/15de9577f9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="info_box activeInfo leaderboard_box">
+      <div class="info-title">Classement des meilleures notes :</div>
+      <div class="info-list leaderboard-list"></div>
+      <div class="buttons">
+        <a href="index.html" class="quit">Retour</a>
+      </div>
+    </div>
+    <!-- Retrieves the leaderboard data from localStorage and displays it in the leaderboard list. -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const leaderboard = document.querySelector(".leaderboard-list");
+        const data = localStorage.getItem("leaderboard");
+        if (!data) return;
+        const parsedData = JSON.parse(data);
+        console.log(parsedData);
+        // Convert the object to an array and sort it by score in descending order
+        const sortedData = Object.entries(parsedData).sort(
+          (a, b) => b[1] - a[1]
+        );
+        sortedData.forEach(([pseudo, score], index) => {
+          leaderboard.innerHTML += `<li>${
+            index + 1
+          }. ${pseudo} : ${score} / 10</li>`;
+        });
+      });
+    </script>
+  </body>
+</html>
